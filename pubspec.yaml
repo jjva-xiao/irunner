@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.0
   flutter_screenutil: 4.0.4+1 #屏幕适配
   get: 3.26.0 #状态管理
+  images_picker: 0.0.9 #相机及相册
+  amap_map_fluttify: ^0.30.1
 
 dev_dependencies:
   flutter_test:

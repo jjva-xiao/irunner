@@ -19,7 +19,7 @@ class _FlashViewState extends State<FlashView> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      Get.to(LoginView());
+      Get.off(LoginView());
     });
   }
   

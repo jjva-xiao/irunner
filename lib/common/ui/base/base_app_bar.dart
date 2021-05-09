@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:irunner/common/constant/color_helper.dart';
 import 'package:irunner/common/constant/size_helper.dart';
+import 'package:irunner/common/ui/base/base_text.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LeftTitleAppBar extends StatelessWidget implements PreferredSizeWidget {
 
@@ -58,7 +61,6 @@ class LeftTitleAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-   // 是否是最后一个路由
    if (canPop == null)
       canPop = ModalRoute.of(context)?.canPop ?? false;
     return AppBar(
@@ -66,16 +68,48 @@ class LeftTitleAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleSpacing: 0.0,
       centerTitle: isCenterTitle,
       backgroundColor: backgroundColor,
-    /*  actions: rightWidget != null
-        ? [
-            Padding(
-              padding: EdgeInsets
-            )
-          ]*/
+      actions: rightWidget != null ?
+        [
+          Padding(
+            padding: EdgeInsets.only(right: 8),
+            child: Center(
+              child: rightWidget,
+            ),
+          )
+        ]
+        :
+        [
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: onTap,
+            child: Align(
+              child: Padding(
+                padding: EdgeInsets.only(right: 16),
+                child: BaseText(right ?? '',
+                    color: rightColor ?? Colors.black),
+              ),
+            ),
+          )
+        ],
+      leading: canPop
+          ? leading ??
+              IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    color: isWhiteBack ? Colors.white : ColorHelper.threeColor,
+                    size: 22,
+                  ),
+                  onPressed: () => Navigator.pop(context))
+          : Container(),
+      title: BaseText(
+        title ?? '',
+        size: titleSize,
+        color: isWhiteBack ? Colors.white : Colors.black,
+      ),
+      bottom: this.bottomWidget,
     );
   }
 
   @override
-  // TODO: implement preferredSize
-  Size get preferredSize => throw UnimplementedError();
+  Size get preferredSize => Size.fromHeight(height.w);
 }
