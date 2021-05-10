@@ -33,6 +33,16 @@ class MyApp extends StatelessWidget {
       builder: () => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         home: FlashView(),
+        onGenerateTitle: (context) {
+          Locale locale = Localizations.localeOf(context);
+        },
+        routes: {
+          '': (context) => FlashView()
+        },
+        initialRoute: '/',
+        onGenerateRoute: (RouteSettings setting) {
+
+        },
       )
     );
   }
