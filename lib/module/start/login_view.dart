@@ -35,7 +35,7 @@ class _LoginViewState extends State<LoginView> {
           ),
           RaisedButton(
             onPressed: () {
-              Get.to(MapTest());
+              // Get.to(MapTest());
             },
             child: Text('进入地图'),
           )

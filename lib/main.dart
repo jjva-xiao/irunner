@@ -1,4 +1,4 @@
-import 'package:amap_map_fluttify/amap_map_fluttify.dart';
+// import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,10 +10,10 @@ void main() {
 }
 
 Future<void> initApp() async {
-  await AmapService.instance.init(
+  /*await AmapService.instance.init(
       iosKey: 'b7ec18a0be26da6a43455d359729e631',
       androidKey: '2bb446a6eda28d1a4d66dbddd321a5df');
-  await enableFluttifyLog(false);
+  await enableFluttifyLog(false);*/
   runApp(MyApp());
 }
 
