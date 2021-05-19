@@ -23,7 +23,8 @@ dependencies:
   sqflite: 1.3.2+4 #数据库
   intl: 0.16.1 #国际化
   event_bus: 1.1.1 #消息总线
-#  flutter_baidu_mapapi_map: 2.0.1
+  flutter_baidu_mapapi_map: 2.0.1
+  oktoast: 2.3.2 #toast，对话框
 
 dev_dependencies:
   flutter_test:

@@ -3,16 +3,17 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:irunner/common/ui/base/base_app_bar.dart';
 import 'package:irunner/module/start/login_view.dart';
 
-class FlashView extends StatefulWidget {
-  const FlashView({Key key}) : super(key: key);
+class SplashView extends StatefulWidget {
+  const SplashView({Key key}) : super(key: key);
 
   @override
-  _FlashViewState createState() => _FlashViewState();
+  _SplashViewState createState() => _SplashViewState();
 }
 
-class _FlashViewState extends State<FlashView> {
+class _SplashViewState extends State<SplashView> {
   
   @override
   void initState() {
